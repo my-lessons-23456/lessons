@@ -5,19 +5,19 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon",
-    "build": "ts-node index.ts",
-    "build:server": "tsc --project tsconfig.server.json",
+    "write": "ts-node index.ts",
+    "build": "tsc --project tsconfig.server.json",
     "types": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^17.0.23",
     "ts-node": "^10.7.0",
+    "tslib": "^2.3.1",
     "typescript": "^4.6.3"
   }
 }

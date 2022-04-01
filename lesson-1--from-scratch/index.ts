@@ -8,7 +8,7 @@ type Human = {
 };
 let humans: Human[] = [{ name: "Vasya", age: 23, gender: "Women" }];
 humans.push(
-  { name: "Galina", age: 22, gender: "Women" },
+  { name: "Galina", age: 24, gender: "Women" },
   { name: "Sergei", age: 20, gender: "Man" },
   { name: "Andrei", age: 55, gender: "Man" },
   { name: "Dmitrii", age: 35, gender: "Man" },
@@ -28,7 +28,7 @@ humans.push(
 // humans.sort(compare);
  
 var slice = [...humans];
-slice = slice.slice();
+slice = slice.slice(1, -2);
 
 // const filtered = humans.filter((n) => {
 //   return n.age > 20 && n.age < 35;

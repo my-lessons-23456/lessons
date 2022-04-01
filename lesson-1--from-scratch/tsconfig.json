@@ -1,16 +1,11 @@
 {
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin",
-        "validate": false
-      }
-    ],
+    "plugins": [],
     // Moved into next-env.d.ts
     // "types": ["jest", "cypress"],
-    "target": "esnext",
-    "module": "esnext",
-    "jsx": "preserve",
+    // "target": "esnext",
+    // "module": "esnext",
+    // "jsx": "preserve",
     "lib": ["dom", "es2017"],
     "baseUrl": ".",
     "moduleResolution": "node",
@@ -22,7 +17,7 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": false,
