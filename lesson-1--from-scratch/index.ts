@@ -1,13 +1,13 @@
 import fs from "fs";
 
-// const names = ["Kolya", "Ksusha", "Vasilisa", "Oleg"];
+// const humans = ["Kolya", "Ksusha", "Vasilisa", "Oleg"];
 type Human = {
   name: String;
   age: number;
   gender: "Man" | "Women";
 };
-let names: Human[] = [{ name: "Vasya", age: 23, gender: "Women" }];
-names.push(
+let humans: Human[] = [{ name: "Vasya", age: 23, gender: "Women" }];
+humans.push(
   { name: "Galina", age: 22, gender: "Women" },
   { name: "Sergei", age: 20, gender: "Man" },
   { name: "Andrei", age: 55, gender: "Man" },
@@ -15,22 +15,24 @@ names.push(
   { name: "Kristina", age: 15, gender: "Women" }
 );
 
-function compare(a:Human, b:Human) {
-  if (a.age < b.age) {
-    return -1;
-  }
-  if (a.age > b.age) {
-    return 1;
-  }
-  // a должно быть равным b
-  return 0;
-}
-names.sort(compare);
+// function compare(a:Human, b:Human) {
+//   if (a.age < b.age) {
+//     return -1;
+//   }
+//   if (a.age > b.age) {
+//     return 1;
+//   }
+//   // a должно быть равным b
+//   return 0;
+// }
+// humans.sort(compare);
+ 
+var slice = [...humans];
+slice = slice.slice();
 
-
-const filtered = names.filter((n) => {
-  return n.age > 20 && n.age < 35;
-});
+// const filtered = humans.filter((n) => {
+//   return n.age > 20 && n.age < 35;
+// });
 
 let count = 0;
 
@@ -45,7 +47,7 @@ const nameRenderer = (human: Human) => {
   </tr>`;
 };
 
-const rows = filtered.map(nameRenderer).join("\n\t\t");
+const rows = slice.map(nameRenderer).join("\n\t\t");
 
 const template = `<!DOCTYPE html>
 <html lang="ru">
