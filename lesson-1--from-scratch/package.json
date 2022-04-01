@@ -2,7 +2,7 @@
   "name": "lesson-1--from-scratch",
   "version": "1.0.0",
   "description": "",
-  "main": "index.mjs",
+  "main": "index.ts",
   "scripts": {
     "dev": "nodemon",
     "build": "node index.mjs",

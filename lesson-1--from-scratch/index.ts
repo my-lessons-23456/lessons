@@ -6,22 +6,31 @@ type Human = {
   age: number;
   gender: "Man" | "Women";
 };
-const names: Human[] = [{ name: "Vasya", age: 23, gender: "Women" }];
+let names: Human[] = [{ name: "Vasya", age: 23, gender: "Women" }];
 names.push(
   { name: "Galina", age: 22, gender: "Women" },
-  { name: "Sergei", age: 20, gender: "Man" }
+  { name: "Sergei", age: 20, gender: "Man" },
+  { name: "Andrei", age: 55, gender: "Man" },
+  { name: "Dmitrii", age: 35, gender: "Man" },
+  { name: "Kristina", age: 15, gender: "Women" }
 );
+
 function compare(a:Human, b:Human) {
-  if (a.age > b.age) {
+  if (a.age < b.age) {
     return -1;
   }
-  if (a.age < b.age) {
+  if (a.age > b.age) {
     return 1;
   }
   // a должно быть равным b
   return 0;
 }
 names.sort(compare);
+
+
+const filtered = names.filter((n) => {
+  return n.age > 20 && n.age < 35;
+});
 
 let count = 0;
 
@@ -34,11 +43,9 @@ const nameRenderer = (human: Human) => {
     <td>${human.age}</td>
     <td>${human.gender}</td>
   </tr>`;
-}
+};
 
-const rows = names
-  .map(nameRenderer)
-  .join("\n\t\t");
+const rows = filtered.map(nameRenderer).join("\n\t\t");
 
 const template = `<!DOCTYPE html>
 <html lang="ru">
